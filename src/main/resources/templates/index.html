@@ -1,0 +1,16 @@
+<!doctype html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <!-- Bootstrap CSS -->
+    <th:block th:replace="/fragments/header::headerFragment"> </th:block>
+</head>
+<body>
+<div th:replace="/fragments/nav::navFragment"></div>
+<a href="/board/create">글 쓰기</a>
+<a href="/board">글 보기</a>
+</body>
+</html>

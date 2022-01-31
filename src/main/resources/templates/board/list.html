@@ -1,0 +1,30 @@
+<!doctype html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <!-- Bootstrap CSS -->
+    <th:block th:replace="/fragments/header::headerFragment"> </th:block>
+</head>
+<body>
+<div th:replace="/fragments/nav::navFragment"></div>
+<div>
+    <table>
+        <thead>
+        <tr>
+            <th>#</th>
+            <th>이름</th>
+        </tr>
+        </thead>
+        <tbody>
+        <tr th:each="board : ${boards}">
+            <td th:text="${board.bid}"></td>
+            <td th:text="${board.title}"></td>
+        </tr>
+        </tbody>
+    </table>
+</div>
+</body>
+</html>

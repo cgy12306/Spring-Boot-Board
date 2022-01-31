@@ -1,0 +1,25 @@
+<!doctype html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <!-- Bootstrap CSS -->
+    <th:block th:replace="/fragments/header::headerFragment"> </th:block>
+</head>
+<body>
+<div th:replace="/fragments/nav::navFragment"></div>
+<form action="/board/create" method="post">
+<div class="mb-3">
+<label for="title" class="form-label">Title</label>
+<input type="text" class="form-control" id="title" name="title" placeholder="제목을 입력하세요">
+</div>
+<div class="mb-3">
+<label for="content" class="form-label">Content</label>
+<textarea class="form-control" type="text" id="content" name="content" rows="3"></textarea>
+</div>
+<input class="btn btn-primary" type="submit" value="Submit">
+</form>
+</body>
+</html>
