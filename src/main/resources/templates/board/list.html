@@ -11,20 +11,24 @@
 <body>
 <div th:replace="/fragments/nav::navFragment"></div>
 <div>
-    <table>
+    <table class ="table table-striped">
         <thead>
         <tr>
-            <th>#</th>
-            <th>이름</th>
+            <th>글 번호</th>
+            <th>제목</th>
         </tr>
         </thead>
         <tbody>
         <tr th:each="board : ${boards}">
-            <td th:text="${board.bid}"></td>
-            <td th:text="${board.title}"></td>
+            <td>[[${board.bid}]]</td>
+            <td>
+                <a th:href="@{/board/read(bid=${board.bid})}">
+                    [[${board.title}]]
+                </a>
         </tr>
         </tbody>
     </table>
 </div>
+
 </body>
 </html>

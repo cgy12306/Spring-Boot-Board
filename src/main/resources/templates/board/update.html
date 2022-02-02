@@ -10,16 +10,17 @@
 </head>
 <body>
 <div th:replace="/fragments/nav::navFragment"></div>
-<form action="/board" method="post">
+<form th:action="@{/board(bid=${board.bid})}" th:method="put">
     <div class="mb-3">
         <label for="title" class="form-label">Title</label>
-        <input type="text" class="form-control" id="title" name="title" placeholder="제목을 입력하세요">
+        <input type="text" class="form-control" id="title" name="title" th:value="${board.title}">
     </div>
     <div class="mb-3">
         <label for="content" class="form-label">Content</label>
-        <textarea class="form-control" type="text" id="content" name="content" rows="3"></textarea>
+        <textarea class="form-control" type="text" id="content" name="content" rows="3">[[${board.content}]]</textarea>
     </div>
-    <input class="btn btn-primary" type="submit" value="Submit">
+    <input type="hidden" name="_method" value="put"/>
+    <button class="btn btn-primary" id="upd" type="submit">수정</button>
 </form>
 </body>
 </html>
